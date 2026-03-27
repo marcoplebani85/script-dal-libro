@@ -1,18 +1,5 @@
-## ----warning = F, message=F, results=F-----------------------------------------------
+
 rm(list=ls()) # ripulisce la memoria di R
-setwd("~/Desktop/Corso_R")
-
-
-## ----include=F, warning = F, message=F, results=F------------------------------------
-if (!require(formatR)) install.packages('formatR'); library(formatR)
-if (!require(knitr)) install.packages('knitr'); library(knitr)
-
-knitr::opts_chunk$set(tidy.opts=list(width.cutoff=65),tidy=TRUE, dpi=200)
-
-options(width = 65)
-
-
-## ----echo=F, message=F, results=F, warning=F-----------------------------------------
 setwd("~/Desktop/Corso_R")
 df <- read.delim("my_data/compare_6_species.txt")
 
