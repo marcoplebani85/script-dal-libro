@@ -8,14 +8,14 @@
 # 
 # # Ultima modifica in data: gg/mm/aaaa
 # 
-# rm(list=ls()) # ripulisce la memoria di R
+rm(list=ls()) # ripulisce la memoria di R
 # 
 # # WORK DIRECTORY
 # 
 # # per ottenere la work directory corrente: getwd()
 # 
 # # per cambiare work directory in R: setwd(). Nel mio caso:
-# setwd("~/Desktop/Corso_R/my_data")
+setwd("~/Desktop/Corso_R/my_data")
 # 
 # # la tilde ("~") in questo caso è una abbreviazione usata nei sistemi Linux
 # 
@@ -25,9 +25,9 @@
 # 
 # # PER AGGIORNARE I PACCHETTI:
 # 
-# options(timeout=600)
+options(timeout=600)
 # # di default, timeout=60: ovvero, se R impiega più di 60 secondi a scaricare pacchetti da internet, interrompe il processo. Fissare timeout=600 è utile per connessioni lente.
-# update.packages(ask = F, type = "binary")
+update.packages(ask = F, type = "binary")
 # 
 # # INSTALLARE PACCHETTI
 # 
@@ -36,31 +36,31 @@
 # # in R: Menu > Packages & data > package installer, clicca su "get list", cerca il pacchetto da installare, selezionalo, seleziona anche "install dependencies" e clicca su "Install selected".
 # 
 # # Oppure installiamo i pacchetti direttamente dal terminale con la funzione install.packages(). Per evitare di reinstallare i pacchetti ogni volta, io uso un "if statement":
-# if (!require(pacman)) install.packages('pacman')
+if (!require(pacman)) install.packages('pacman')
 # # Questo significa: "se il pacchetto pacman non è installato, procedi con l'installazione. A questo punto il pacchetto in questione può essere caricato con:
-# library(pacman)
+library(pacman)
 # # Il pacchetto pacman contiene funzioni che facilitano l'installazione e il caricamento dei pacchetti dal terminale di R. In particolare, la funzione p_load() svolge il lavoro di library(), ma si premura di installare automaticamente i pacchetti se non sono ancora stati installati. La funzione p_load svolge il lavoro di install.packages() e library() in un colpo solo.
 # 
 # # PACCHETTI DI USO COMUNE:
 # 
-# p_load(openxlsx)
+p_load(openxlsx)
 # # openxlsx serve a caricare dati da file .xlsx. Per formati .xls provate readxl, che però richiede di avere installato Java.
-# p_load(doBy) # per calculare summary statistics
+p_load(doBy) # per calculare summary statistics
 # # per calcolare le medie marginali e i parametri dei modelli:
-# p_load(emmeans)
-# p_load(ggplot2) # per produrre grafici
+p_load(emmeans)
+p_load(ggplot2) # per produrre grafici
 # 
 # # PACCHETTI PER PRODURRE MODELLI NON-LINEARI:
 # 
-# p_load(nlstools) # grafici diagnostici per nls()
-# p_load(nls.multstart) # extra optionals per nls()
+p_load(nlstools) # grafici diagnostici per nls()
+p_load(nls.multstart) # extra optionals per nls()
 # 
 # # PACCHETTI PER PRODURRE MODELLI MISTI:
 # 
-# p_load(glmmTMB)
+p_load(glmmTMB)
 # # glmmTMB sostituisce e supera le funzioni lm() e glm() ed i pacchetti lme4 e lmerTest
-# p_load(DHARMa) # grafici diagnostici per glmmTMB
-# p_load(MuMIn) # stima pseudo-R^2 per modelli misti.
+p_load(DHARMa) # grafici diagnostici per glmmTMB
+p_load(MuMIn) # stima pseudo-R^2 per modelli misti.
 # 
 # # PROTOCOLLO DI ANALISI DEI DATI
 # 
